@@ -1,0 +1,439 @@
+.project-wrapper {
+    padding: 150px 0;
+    position: relative;
+
+    @include breakpoint (max-xl){
+        padding: 0;
+    }
+
+    .section-title {
+        transform: rotate(-90deg);
+        margin: 0 -170px;
+        max-width: 470px;
+        margin-bottom: 5px;
+
+        @include breakpoint (max-xl){
+           transform: initial;
+           margin: 0;
+        }
+    }
+
+    .project-header {
+        margin-bottom: 50px;
+        
+
+        @include breakpoint (max-md){
+            .text-end {
+                text-align: left !important;
+            }
+
+            .theme-btn-2 {
+                margin-top: 30px;
+                margin-left: 10px;
+            }
+        }
+    }
+
+    .project-slider {
+        margin-right: -70%;
+
+        @include breakpoint (max-xl){
+          margin-right: 0;
+        }
+    }
+
+    .project-image {
+        height: 530px;
+        max-width: 450px;
+        position: relative;
+        overflow: hidden;
+
+        @include breakpoint (max-xl){
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        @include breakpoint (max-lg){
+           height: 450px;
+        }
+
+        @include breakpoint (max-sm){
+            height: 400px;
+         }
+
+        &::before {
+            background-image: $color-gradient-3;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            @include before;
+            overflow: hidden;
+            opacity: 0;
+            -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            visibility: hidden;
+            content: "";
+        }
+
+        .post-box {
+            width: 70px;
+            height: 70px;
+            line-height: 75px;
+            border-radius: 50%;
+            background-color: $white;
+            color: $theme-color;
+            text-align: center;
+            font-size: 18px;
+            position: absolute;
+            top: -50px;
+            left: 30px;
+            @include transition;
+            visibility: hidden;
+            opacity: 0;
+
+            i {
+              font-size: 24px;
+            }
+
+            &:hover {
+                background-color: $theme-color;
+                color: $white;
+            }
+
+        }
+
+       .project-content {
+            position: absolute;
+            bottom: -100px;
+            left: 40px;
+            overflow: hidden;
+            opacity: 0;
+            visibility: hidden;
+            transition: all .6s ease-in-out;
+       }
+
+       &.style-2 {
+            .post-box {
+                top: -60px;
+                @include transition;
+                visibility: hidden;
+                opacity: 0;
+
+                span {
+                    margin-left: 18px;
+                    
+                }
+
+            }
+
+            &:hover {
+                .post-box {
+                    top: 30px;
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+
+            &.active {
+                &::before {
+                    visibility: visible;
+                    opacity: 1;
+                }
+                
+                .post-box {
+                    top: 30px;
+                    visibility: visible;
+                    opacity: 1;
+                }
+
+                .project-content {
+                    bottom: 40px;
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+       }
+
+       &:hover {
+
+        &::before {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .post-box {
+            visibility: visible;
+            opacity: 1;
+            top: 30px;
+        }
+          .project-content {
+             bottom: 40px;
+             visibility: visible;
+             opacity: 1;
+          }
+       }
+    }
+
+    .swiper-slide.swiper-slide-active{
+        .project-image {
+            &::before {
+                visibility: visible;
+                opacity: 1;
+            }
+    
+            .post-box {
+                visibility: visible;
+                opacity: 1;
+                top: 30px;
+            }
+    
+           .project-content {
+                bottom: 40px;
+                visibility: visible;
+                opacity: 1;
+           }
+        }
+    }
+
+    .swiper-dot-2 {
+        position: absolute;
+        left: 20%;
+        bottom: 48.9%;
+        z-index: 9;
+        transform: rotate(-90deg);
+
+        @include breakpoint (max-xl){
+            display: none;
+        }
+    }
+}
+
+.line-area {
+    @include breakpoint (max-xl){
+        display: none;
+    }
+    
+    span {
+        position: absolute;
+        content: "";
+        width: 1px;
+        height: 72.5%;
+        top: 0;
+        left: 26%;
+        background-color: $border-color-2;
+        z-index: -1;
+        
+        &:nth-child(2) {
+            left: 50%;
+          }
+  
+          &:nth-child(3) {
+            left: 70%;
+          }
+    }
+}
+
+.project-section {
+    position: relative;
+
+    &::before {
+        @include before;
+        background-color: $bg-color-2;
+        z-index: -1;
+        height: 72.5%;
+    }
+}
+
+.project-wrapper-2 {
+    margin-top: 30px;
+
+    .project-content-area {
+
+        position: relative;
+
+        &::before {
+            position: absolute;
+            top: -38%;
+            left: -25%;
+            content: "";
+            background-color: $border-color;
+            height: 700px;
+            width: 1px;
+
+            @include breakpoint (max-xxl){
+                display: none;
+            }
+        }
+
+        &::after {
+            position: absolute;
+            top: -38%;
+            right: -3%;
+            content: "";
+            background-color: $border-color;
+            height: 700px;
+            width: 1px;
+
+            @include breakpoint (max-xxl){
+                display: none;
+            }
+        }
+
+        p {
+            margin-bottom: 130px;
+
+            @include breakpoint (max-xl){
+                margin-bottom: 50px;
+            }
+
+            @include breakpoint (max-lg){
+                margin-bottom: 130px;
+            }
+
+            @include breakpoint (max-md){
+                margin-bottom: 40px;
+            }
+        }
+
+        .project-content {
+            h4 {
+                margin-bottom: 10px;
+            }
+
+            p {
+                color: $white;
+            }
+        }
+
+        .pegi-wrp {
+            position: relative;
+
+            &::after {
+                position: absolute;
+                content: "";
+                bottom: 0;
+                right: 0;
+                width: 155px;
+                height: 1px;
+                background-color: $border-color;
+                transform: rotate(-50deg);
+            }
+
+            .pegi-number {
+                font-size: 24px;
+
+                span {
+                    &:not(:last-child){
+                        color: $white;
+                    }
+                }
+            }
+        }
+
+        .arry-button {
+            @include breakpoint (max-xl){
+                display: none;
+            }
+            .arry-prev {
+                border-radius: 50%;
+                width: 70px;
+                height: 70px;
+                line-height: 70px;
+                border: 1px solid $border-color;
+                background-color: transparent;
+                margin-right: 25px;
+                color: $border-color;
+            }
+
+            .arry-next {
+                border-radius: 50%;
+                width: 70px;
+                height: 70px;
+                line-height: 70px;
+            }
+        }
+    }
+
+    .project-image {
+        margin-left: 50px;
+
+        @include breakpoint (max-lg){
+            margin-left: 0;
+        }
+
+        img {
+            @include imgw;
+        }
+    }
+}
+
+.project-details-wrapper {
+    .details-image {
+        img {
+            @include imgw;
+        }
+    }
+
+    .project-details-content {
+        margin-top: 30px;
+
+        h2 {
+            font-size: 32px;
+
+            @include breakpoint (max-sm){
+                font-size: 28px;
+            }
+        }
+
+        .project-date {
+            @include flex;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+
+            li {
+                font-weight: 500;
+                color: $text-color;
+
+                span {
+                    font-weight: 400;
+                    color: $theme-color;
+                }
+            }
+        }
+
+        .project-challenge-list {
+            max-width: 780px;
+            @include flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .project-challenge {
+            li {
+                font-weight: 500;
+                color: var(--heading-color);
+
+                i {
+                    width: 20px;
+                    height: 20px;
+                    line-height: 20px;
+                    text-align: center;
+                    border-radius: 50%;
+                    @include transition;
+                    background: $color-gradient-1;
+                    color: $white;
+                    font-size: 10px;
+                    margin-right: 10px;
+                }
+            }
+        }
+
+        .image {
+            img {
+                @include imgw;
+            }
+        }
+    }
+} 

@@ -1,0 +1,83 @@
+.mean-container a.meanmenu-reveal {
+	display: none;
+  }
+  
+  .mean-container .mean-nav {
+	background: none;
+	margin-top: 0;
+  }
+  
+  .mean-container .mean-bar {
+	padding: 0;
+	min-height: auto;
+	background: none;
+  }
+  
+  .mean-container .mean-nav > ul {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	list-style-type: none;
+	display: block !important;
+  }
+  
+  .mean-container a.meanmenu-reveal {
+	display: none !important;
+  }
+  
+  .mean-container .mean-nav ul li a {
+	width: 100%;
+	padding: 10px 0;
+	color: $white;
+	font-size: 16px;
+	line-height: 1.5;
+	font-weight: 500;
+	text-transform: capitalize;
+	border-bottom: 1px solid $border-color !important;
+	border: none;
+
+	&:hover {
+		color: $theme-color-2;
+	}
+  }
+  .mean-container .mean-nav ul li a:last-child {
+	border-bottom: 0;
+  }
+  .mean-container .mean-nav ul li a:hover {
+	color: $theme-color-2;
+  }
+  
+  .mean-container .mean-nav ul li a.mean-expand {
+	margin-top: 5px;
+	padding: 0 !important;
+  }
+  
+  .mean-container .mean-nav ul li > a > i {
+	display: none;
+  }
+  
+  .mean-container .mean-nav ul li > a.mean-expand i {
+	display: inline-block;
+	font-size: 18px;
+  }
+  
+  .mean-container .mean-nav > ul > li:first-child > a {
+	border-top: 0;
+  }
+  
+  .mean-container .mean-nav ul li a.mean-expand.mean-clicked i {
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	@include transition;
+  }
+  
+  .mean-container .mean-nav ul li .mega-menu li a {
+	height: 200px;
+	width: 100%;
+	padding: 0;
+	border-top: 0;
+	margin-bottom: 20px;
+  }

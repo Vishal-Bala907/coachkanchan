@@ -1,0 +1,46 @@
+
+:root {
+
+    
+    --body: #fff;
+    --black: #000;
+    --white: #fff;
+    --theme: #EC2D2D;
+    --theme2: #FF9900;
+    --theme3: #FF9900;
+    --header: #232323;
+    --base: #EC2D2D;
+    --text: #888888;
+    --border: #8888884d;
+    --border2: #272727;
+    --bg: #0E0E0E;
+    --bg2: #191919;
+    --bg3: #ffffff33;
+
+    --color-gradient-1: linear-gradient(90deg, #FF9900 0%, #CC2500 100%);
+    --color-gradient-2: linear-gradient(102.27deg, #0E0E0E 0%, rgba(35, 35, 35, 0.29) 100%);
+    --color-gradient-3: linear-gradient(180deg, rgba(255, 153, 0, 0) 0%, #EE332B 100%);
+    --color-gradient-4: linear-gradient(226.22deg, rgba(255, 153, 0, 0) 0%, #EE332B 84.75%);
+    --color-gradient-5: linear-gradient(96.78deg, #0E0E0E 2.09%, rgba(35, 35, 35, 0.29) 75.55%);
+    
+}
+
+// Theme Color - Defualt Colors
+$black: var(--black);
+$white: var(--white);
+$theme-color: var(--theme);
+$theme-color-2: var(--theme2);
+$theme-color-3: var(--theme3);
+$text-color: var(--text);
+$header-color: var(--header);
+$button-color: var(--button);
+$border-color: var(--border);
+$border-color-2: var(--border2);
+$bg-color: var(--bg);
+$bg-color-2: var(--bg2);
+$bg-color-3: var(--bg3);
+$color-gradient-1: var(--color-gradient-1);
+$color-gradient-2: var(--color-gradient-2);
+$color-gradient-3: var(--color-gradient-3);
+$color-gradient-4: var(--color-gradient-4);
+$color-gradient-5: var(--color-gradient-5);

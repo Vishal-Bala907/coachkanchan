@@ -1,0 +1,224 @@
+//>>>>> Component Button Here <<<<<//
+.theme-btn {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none !important;
+  background-color: $theme-color;
+  color: $white;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 18px 45px;
+  transition: all 0.5s linear;
+  overflow: hidden;
+  z-index: 99;
+
+  &::before {
+    position: absolute;
+    content: "";
+    background-color: $white;
+    width: 120%;
+    height: 0;
+    padding-bottom: 120%;
+    top: -110%;
+    left: -10%;
+    border-radius: 50%;
+    transform: translate3d(0, 68%, 0) scale3d(0, 0, 0);
+    z-index: -1;
+  }
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background-color: $white;
+    transform: translate3d(0, -100%, 0);
+    transition: transform 0.4s cubic-bezier(0.1, 0, 0.3, 1);
+    z-index: -1;
+  }
+
+  &:hover {
+    color: $header-color;
+
+    &::before {
+      transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+      transition: transform 0.4s cubic-bezier(0.1, 0, 0.3, 1);
+    }
+    &::after {
+      transform: translate3d(0, 0, 0);
+      transition-duration: 0.05s;
+      transition-delay: 0.4s;
+      transition-timing-function: linear;
+    }
+  }
+
+  &.style-2 {
+    border: 1px solid $white;
+    padding: 17px 45px;
+    background-color: transparent;
+
+    &::before,
+    &::after {
+      background-color: $theme-color;
+    }
+
+    &:hover {
+      color: $white;
+      border: 1px solid $theme-color;
+    }
+  }
+
+  @include breakpoint(max-lg) {
+    font-size: 15px;
+    padding: 18px 35px;
+  }
+
+  @include breakpoint(max-sm) {
+    font-size: 14px;
+    padding: 12px 32px;
+  }
+}
+
+.theme-btn-2 {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none !important;
+  color: $text-color;
+  font-size: 16px;
+  font-weight: 700;
+  transition: all 0.5s linear;
+  overflow: hidden;
+  z-index: 99;
+  border: 1px solid $text-color;
+  padding: 20px 45px;
+  background-color: transparent;
+
+  &::before {
+    position: absolute;
+    content: "";
+    background-color: #14b2f1;
+    width: 120%;
+    height: 0;
+    padding-bottom: 120%;
+    top: -110%;
+    left: -10%;
+    border-radius: 50%;
+    transform: translate3d(0, 68%, 0) scale3d(0, 0, 0);
+    z-index: -1;
+  }
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background-color: #14b2f1;
+    transform: translate3d(0, -100%, 0);
+    transition: transform 0.4s cubic-bezier(0.1, 0, 0.3, 1);
+    z-index: -1;
+  }
+
+  &:hover {
+    color: $white;
+    border: 1px solid $theme-color;
+
+    &::before {
+      transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+      transition: transform 0.4s cubic-bezier(0.1, 0, 0.3, 1);
+    }
+    &::after {
+      transform: translate3d(0, 0, 0);
+      transition-duration: 0.05s;
+      transition-delay: 0.4s;
+      transition-timing-function: linear;
+    }
+
+    .shape-img {
+      filter: grayscale(100%) brightness(300%);
+    }
+  }
+
+  &.white-border {
+    border: 1px solid $white;
+    padding: 17px 45px;
+    color: $white;
+
+    @include breakpoint(max-lg) {
+      font-size: 15px;
+      padding: 17px 35px;
+    }
+
+    @include breakpoint(max-sm) {
+      font-size: 14px;
+      padding: 11px 32px;
+    }
+
+    &:hover {
+      border: 1px solid $theme-color;
+    }
+  }
+
+  @include breakpoint(max-lg) {
+    font-size: 15px;
+    padding: 18px 35px;
+  }
+
+  @include breakpoint(max-sm) {
+    font-size: 14px;
+    padding: 12px 32px;
+  }
+
+  &.padding-style {
+    line-height: 1;
+    padding: 20px 45px;
+  }
+
+  .shape-img {
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+    @include transition;
+  }
+}
+
+.scroll-up svg.scroll-circle path {
+  stroke: var(--theme2);
+  stroke-width: 4px;
+  box-sizing: border-box;
+  transition: all 0.4s ease-in-out;
+}
+
+.scroll-up.active-scroll {
+  opacity: 1;
+  visibility: visible;
+}
+.scroll-up::after {
+  position: absolute;
+  font-family: "Font Awesome 6 free";
+  content: "\f062";
+  text-align: center;
+  line-height: 50px;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--theme2);
+  left: 0;
+  top: 0;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  display: block;
+  z-index: 1;
+  transition: all 0.4s ease-in-out;
+}
+
+//>>>>> Component Button End <<<<<//

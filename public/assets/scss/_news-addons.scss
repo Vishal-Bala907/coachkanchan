@@ -1,0 +1,95 @@
+.single-news-items {
+    margin-top: 30px;
+    border: 1px solid $border-color;
+    overflow: hidden;
+
+    .news-image {
+        position: relative;
+        overflow: hidden;
+        @include transition;
+
+        &::before {
+            position: absolute;
+            top: 0;
+            left: -75%;
+            display: block;
+            content: "";
+            width: 10%;
+            height: 100%;
+            transform: skewX(-50deg);
+            background-color: $theme-color;
+            opacity: 0.2;
+            z-index: 1;
+        }
+
+        img {
+            @include imgw;
+            @include transition;
+        }
+
+        .post-date {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            padding-right: 15px;
+            background: $white;
+            z-index: 99;
+
+            li {
+                font-size: 14px;
+                
+                i {
+                    padding: 15px;
+                    background-color: $theme-color;
+                    color: $white;
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+
+    .news-content {
+        padding: 30px 25px;
+
+        .post-list {
+            gap: 30px;
+            margin-bottom: 20px;
+
+            li {
+                i {
+                    color: $theme-color;
+                    margin-right: 5px;
+                }
+            }
+        }
+
+        h4 {
+            margin-bottom: 30px;
+
+            @include breakpoint (max-sm){
+                font-size: 22px;
+            }
+
+            a {
+                &:hover {
+                    color: $theme-color;
+                }
+            }
+        }
+    }
+
+    &:hover {
+        .news-image {
+           
+            &::before {
+                left: 140%;
+                transition: all 2300ms cubic-bezier(0.19, 1, 0.22, 1);
+            }
+
+            img {
+                -webkit-transform: scale(1.1) rotate(-4deg);
+                transform: scale(1.1) rotate(-4deg);
+            }
+        }
+    }
+}

@@ -1,0 +1,227 @@
+.page-nav-wrap {
+    ul {
+        li {
+            display: inline-block;
+
+            a {
+                &.current {
+                    background-color: $theme-color;
+                    color: $white;
+                }
+
+                display: inline-block;
+                width: 72px;
+                height: 72px;
+                line-height: 72px;
+                border-radius: 50%;                
+                background: transparent;
+                font-weight: 700;
+                transition: all 0.3s ease-in-out;
+                margin: 0 2px;
+                border: 1px solid $border-color;
+                color: $white !important;
+
+                @media (max-width: 767px) {
+                    margin-top: 10px;
+                    width: 50px;
+                    height: 50px;
+                    line-height: 50px;
+                    font-size: 14px;
+                }
+
+                i {
+                    margin-top: 2px;
+                }
+                &:hover {
+                    background-image: $color-gradient-1;
+                    color: $white;
+                    border: 1px solid transparent;
+                }
+            }
+            &.previous {
+                display: none;
+            }
+            &.selected{
+               & a {
+                  background-image: var(--color-gradient-1);
+                  color: var(--white);
+                  border: 1px solid transparent;
+                }
+            }
+        }
+    }
+}
+
+.main-sidebar {
+    .single-sidebar-widget {
+        padding: 40px 30px;
+        background-color: $bg-color-2;
+        margin-bottom: 30px;
+
+        .wid-title {
+            margin-bottom: 25px;
+
+            h5 {
+                position: relative;
+                padding-bottom: 15px;
+
+                &::before {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    height: 2px;
+                    width: 83px;
+                    content: "";
+                    background-image: $color-gradient-4;
+                }
+            }
+        }
+
+        .search-widget {
+            form {
+                width: 100%;
+                position: relative;
+        
+                input {
+                    background-color: $bg-color;
+                    font-size: 15px;
+                    padding: 20px;
+                    width: 100%;
+                    border: none;
+                    color: $white;
+                }
+        
+                button {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    width: 70px;
+                    font-size: 18px;
+                    height: 100%;
+                    background-color:$theme-color;
+                    color: $white;
+                    text-align: center;
+                    transition: all .3s ease-in-out;
+                    
+                    &:hover {
+                        background-color: $header-color;
+                    }
+                }
+            }
+        }
+
+        .widget-categories {
+            ul {
+                border-top: 1px solid $border-color;
+                li {
+                    border-bottom: 1px solid $border-color;
+                    padding: 20px 0;
+
+                    a {
+                        @include flex;
+                        justify-content: space-between;
+                        position: relative;
+                        transition: all .3s ease-in-out;
+                        .text {
+                           i {
+                            margin-right: 10px;
+                           }
+                        }
+                    }
+
+                    &:hover {
+                        a {
+                            color: $theme-color;
+                            .text {
+                                margin-left: 20px;
+                            }
+                        }   
+                    }
+                }
+            }
+        }
+
+        .popular-posts {
+            .single-post-item {
+                overflow: hidden;
+                border-bottom: 1px solid $border-color;
+                padding-bottom: 20px;
+                margin-bottom: 20px;
+
+                .thumb {
+                    width: 80px;
+                    height: 80px;
+                    float: left;
+                    margin-right: 20px;
+                }
+
+                .post-content {
+                    .post-date {
+                        color: $theme-color;
+                        margin-bottom: 10px;
+
+                        i {
+                            margin-right: 10px;
+                        }
+                    }
+
+                    h6 {
+                        font-size: 16px;
+
+                        a {
+                            &:hover {
+                                color: $theme-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .tagcloud {
+            a {
+                display: inline-block;
+                padding: 11px 20px;
+                line-height: 1;
+                font-size: 16px;
+                font-weight: 500;
+                background: $theme-color;
+                margin-right: 5px;
+                text-transform: capitalize;
+                margin-bottom: 10px;
+                @include transition;
+                &:last-child {
+                    margin-right: 0;            
+                }
+                
+                &:hover {
+                    background-color: $white;
+                    color: $theme-color;
+                }
+            }
+        }
+
+        .opening-category {
+            border-top: 1px solid $border-color;
+
+            li {
+                border-bottom: 1px solid $border-color;
+                padding: 20px 0;
+
+                @include flex;
+                justify-content: space-between;
+                position: relative;
+                transition: all .3s ease-in-out;
+                    
+                i {
+                    color: $theme-color;
+                }
+            }
+        }
+    }
+}
+
+p.form_error{
+    font-size: 14px;
+    color: red;
+}

@@ -1,0 +1,178 @@
+.pricing-items {
+    background-color: $bg-color-2;
+    padding: 40px;
+    @include transition;
+
+    @include breakpoint (max-sm){
+        padding: 40px 30px;
+    }
+
+    .pricing-header {
+        border-bottom: 1px solid $border-color;
+        padding-bottom: 30px;
+
+        span {
+            color: $white;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        h2 {
+            font-size: 80px;
+
+            @include breakpoint (max-sm){
+                font-size: 50px;
+            }
+
+            @include breakpoint (max-lg){
+                font-size: 65px;
+            }
+
+            background: $color-gradient-1;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            sub {
+                font-size: 16px;
+                color: $text-color;
+                margin-left: -30px;
+                -webkit-text-fill-color: initial;
+                font-weight: 400;
+
+                @include breakpoint (max-sm){
+                   margin-left: -10px;
+                }
+            }
+        }
+    }
+
+    .pricing-list {
+        margin-top: 30px;
+
+        li {
+            position: relative;
+            padding-left: 20px;
+
+            &:not(:last-child){
+                margin-bottom: 10px;
+            }
+
+            &::before {
+                position: absolute;
+                top: 10px;
+                left: 0;
+                content: "";
+                width: 6px;
+                height: 6px;
+                border-radius: 6px;
+                background-color: $theme-color;
+            }
+        }
+    }
+
+    .pricing-button {
+        margin-top: 50px;
+
+        .theme-btn-2 {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    &.active {
+        position: relative;
+        z-index: 9;
+
+        &::before {
+            @include before;
+            background-image: url(../../assets/img/pricing-shape.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            content: "";
+            z-index: 9;
+            @include transition;
+        }
+
+        &::after {
+            position: absolute;
+            background-image: url(../../assets/img/tag.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            content: "";
+            z-index: 9;
+            @include transition;
+            width: 100px;
+            height: 53px;
+            top: 25px;
+            right: 15px;
+        }
+
+        .pricing-header {
+            position: relative;
+            z-index: 9;
+            border-bottom: 1px solid $white;
+
+            h2 {
+                color: $white;
+                background: initial;
+                -webkit-background-clip: initial;
+                -webkit-text-fill-color: initial;
+
+                sub {
+                    color: $white;
+                }
+            }
+
+            p {
+                color: $white;
+            }
+        }
+
+        ul {
+            position: relative;
+            z-index: 9;
+
+            li {
+                color: $white;
+
+                &::before {
+                    background-color: $white;
+                }
+            }
+        }
+
+        .pricing-button {
+            border: 1px solid $white;
+
+           .theme-btn-2 {
+                border: 1px solid $white;
+                color: $white;
+
+                .shape-img {
+                    filter: brightness(0%);
+                    -webkit-filter: brightness(0%);
+                    -moz-filter: brightness(0%);
+                }
+
+                &:hover {
+                    color: $header-color;
+                    background-color: $white;
+
+                    &::before,&::after {
+                        background-color: $white !important;
+                    }
+
+                    .shape-img {
+                        filter: brightness(0%);
+                        -webkit-filter: brightness(0%);
+                        -moz-filter: brightness(0%);
+                    }
+                }
+           }
+        }
+    }
+
+    &:hover {
+        transform: translateY(-10px);
+    }
+}

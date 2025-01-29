@@ -1,0 +1,211 @@
+.counter-wrapper {
+    .counter-main-items {
+        padding: 100px;
+        @include flex;
+        justify-content: space-between;
+        position: relative;
+        margin-top: -50px;
+
+        @include breakpoint (max-xxl){
+            margin-top: -25px;   
+        }
+
+        @include breakpoint (max-xl){
+            margin-top: -15px;   
+        }
+
+        @include breakpoint (max-lg){
+            margin-top: -10px;   
+            padding: 50px 20px;
+            gap: 20px;
+        }
+
+        @include breakpoint (max-md){
+            margin-top: -5px;  
+            padding: 40px; 
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        &::before {
+            @include before;
+            background: linear-gradient(to left, $black 0%, $black 100%);
+            opacity: .9;
+        }
+
+        .counter-items {
+            position: relative;
+            z-index: 9;
+
+            h2 {
+                color: $theme-color;
+                margin-bottom: 10px;
+                font-size: 40px;
+
+                span {
+                    margin-right: 15px;
+                    color: $white;
+                }
+
+                .text {
+                    color: $white;
+                    margin-left: -15px;
+                }
+
+                @include breakpoint (max-sm){
+                    font-size: 36px;
+                    margin-bottom: 5px;
+
+                    span {
+                        margin-right: 10px;
+                    }
+                }
+            }
+
+            p {
+                color: $white;
+            }
+        }
+    }
+
+    .industril-image {
+        max-width: 1170px;
+        text-align: center;
+        margin: 0 auto;
+
+       img {
+             @include imgw;
+       }
+        
+    }
+}
+
+.counter-wrapper-2 {
+    .industril-image {
+        max-width: 1170px;
+        text-align: center;
+        margin: 0 auto;
+
+       img {
+             @include imgw;
+       }
+        
+    }
+    
+    .counter-area {
+        margin-top: -50px;
+
+        @include breakpoint (max-xxl){
+            margin-top: -25px;   
+        }
+
+        @include breakpoint (max-xl){
+            margin-top: -15px;   
+        }
+
+        @include breakpoint (max-lg){
+            margin-top: -10px;   
+        }
+
+        @include breakpoint (max-md){
+            margin-top: -5px;  
+        }
+
+        &::before {
+            @include before;
+            background: linear-gradient(to left, $black 0%, $black 100%);
+            opacity: .9;
+        }
+
+        .counter-main-items {
+            padding: 100px;
+            @include flex;
+            justify-content: space-between;
+            position: relative;
+
+            @include breakpoint (max-xxl){
+                margin-top: -25px;   
+            }
+    
+            @include breakpoint (max-xl){
+                margin-top: -15px;   
+            }
+    
+            @include breakpoint (max-lg){
+                margin-top: -10px;   
+                padding: 50px;
+                gap: 20px;
+            }
+    
+            @include breakpoint (max-md){
+                margin-top: -5px;  
+                padding: 40px; 
+                flex-wrap: wrap;
+                gap: 30px;
+            }
+
+            .counter-items {
+                position: relative;
+                z-index: 9;
+    
+                h2 {
+                    color: $theme-color;
+                    margin-bottom: 10px;
+    
+                    span {
+                        margin-right: 15px;
+                        color: $white;
+                    }
+    
+                    .text {
+                        color: $white;
+                        margin-left: -15px;
+                    }
+                }
+    
+                p {
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
+.video-section {
+    position: relative;
+    background-attachment: fixed;
+
+    &::before {
+        @include before;
+        background: linear-gradient(to left, $black 0%, $black 100%);
+        opacity: .6;
+    }
+}
+
+.video-wrapper-box {
+    padding: 200px 0;
+
+    @include breakpoint (max-md){
+        padding: 150px 0;
+    }
+
+    @include breakpoint (max-sm){
+        padding: 120px 0;
+    }
+
+    .video-btn {
+       position: relative;
+
+       .text-circle {
+            animation: cir36 10s linear infinite;
+        }
+
+        span {
+            position: absolute;
+            top: 50%;
+            z-index: 1;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
