@@ -26,7 +26,7 @@ Version: 1.0.0
   --bg2: #191919;
   --bg3: #ffffff33;
   --color-gradient-1: linear-gradient(90deg, #ff9900 0%, #cc2500 100%);
-  --color-gradient-0: linear-gradient(90deg, #72eaff 0%, #0093ce 100%);
+  --color-gradient-0: linear-gradient(90deg, #070e25 0%, #000000 100%);
   --color-gradient-2: linear-gradient(
     102.27deg,
     #0e0e0e 0%,
@@ -1368,7 +1368,7 @@ input.main-search-input::placeholder {
 }
 .sticky.header-1::before {
   width: 100%;
-  background: var(--color-gradient-1);
+  background: var(--color-gradient-0);
   clip-path: initial;
 }
 .sticky.header-1::after {

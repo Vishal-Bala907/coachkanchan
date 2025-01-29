@@ -67,7 +67,7 @@ const AboutArea = () => {
                   alt="about-img"
                   style={{ objectFit: "contain" }}
                 />
-                <h4 className="title-text">40+ Years Experieance</h4>
+                <h4 className="title-text">10+ Years Experieance</h4>
               </div>
             </div>
             <div className="col-xl-6 col-lg-6 mt-5 mt-lg-0">

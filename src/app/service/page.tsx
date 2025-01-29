@@ -2,7 +2,7 @@ import Service from "@/components/inner-pages/services/service";
 import Wrapper from "@/layouts/Wrapper";
 
 export const metadata = {
-  title: "Service industril - Factory and Industrial React Next js Template",
+  title: "Dr. Kanchan",
 };
 const index = () => {
   return (
