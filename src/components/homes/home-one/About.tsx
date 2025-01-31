@@ -92,11 +92,25 @@ const About = () => {
                         <h3>
                           <span className="count">
                             {/* <Count number={25} /> */}
-                            10+
+                            20+
                           </span>{" "}
-                          Years
+                          Years of
                         </h3>
-                        <p>Experience</p>
+                        <p
+                          style={{
+                            textAlign: "center",
+                          }}
+                        >
+                          Experience of
+                        </p>
+                        <p
+                          style={{
+                            textAlign: "left",
+                          }}
+                        >
+                          training and mentoring <br /> students for academic{" "}
+                          <br /> & career growth
+                        </p>
                       </div>
                     </div>
                   </div>

@@ -19,20 +19,31 @@ const about_content: ContentType = {
   title: "Who is Kanchan Ma’am?",
   desc_1: (
     <>
-      Kanchan is a<b> renowned mindset coach and trainer</b> who specializes in
-      personal development, motivation, and transformation. With years of
-      experience in <b> seminars, webinars, and life coaching</b>, she has
-      empowered individuals to break their mental barriers and achieve their
-      true potential.
+      Kanchan is a
+      <span style={{ color: "#ffe000" }}> renowned mindset coach </span> and
+      <span style={{ color: "#ffe000" }}>
+        {" "}
+        academic performance coach and also a trainer
+      </span>{" "}
+      who specializes in personal development, motivation, and transformation.
+      With years of experience in{" "}
+      <span style={{ color: "#ffe000" }}>
+        {" "}
+        seminars, webinars, and life coaching
+      </span>
+      , she has empowered individuals to break their mental barriers and achieve
+      their true potential.
     </>
   ),
   desc_2: (
     <>
       Her coaching methods blend{" "}
-      <b>psychology, neuroscience, and practical techniques</b> to help you
-      create lasting change. Whether it&apos;s career growth, business success,
-      or personal fulfillment—Kanchan&apos;s guidance can make all the
-      difference.
+      <span style={{ color: "#ffe000" }}>
+        psychology, neuroscience, and practical techniques
+      </span>{" "}
+      to help you create lasting change. Whether it&apos;s career growth,
+      business success, or personal fulfillment—Kanchan&apos;s guidance can make
+      all the difference.
     </>
   ),
   list: [

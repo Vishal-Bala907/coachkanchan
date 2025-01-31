@@ -67,7 +67,31 @@ const AboutArea = () => {
                   alt="about-img"
                   style={{ objectFit: "contain" }}
                 />
-                <h4 className="title-text">10+ Years Experieance</h4>
+                <span className="title-text" style={{ color: "white" }}>
+                  {" "}
+                  <h3>
+                    <span className="count">
+                      {/* <Count number={25} /> */}
+                      20+
+                    </span>{" "}
+                    Years of
+                  </h3>
+                  <p
+                    style={{
+                      textAlign: "center",
+                    }}
+                  >
+                    Experience of
+                  </p>
+                  <p
+                    style={{
+                      textAlign: "left",
+                    }}
+                  >
+                    training and mentoring <br /> students for academic <br /> &
+                    career growth
+                  </p>
+                </span>
               </div>
             </div>
             <div className="col-xl-6 col-lg-6 mt-5 mt-lg-0">
