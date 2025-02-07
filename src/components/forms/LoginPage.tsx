@@ -7,6 +7,8 @@ import FooterOne from "@/layouts/footers/FooterOne";
 import style from "./loginpage.module.css";
 import Typed from "typed.js";
 import { useRouter } from "next/navigation";
+import { loginHandler } from "../server/auth/auth";
+import { toast } from "react-toastify";
 
 const darkTheme = createTheme({
   palette: {
@@ -47,9 +49,20 @@ const LoginPage: React.FC = () => {
     };
   }, []);
 
+  // const router = useRouter();
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    console.log("Login attempt with", { email, password });
+    loginHandler({ email, password })
+      .then((data) => {
+        toast.success("Login Successfull...");
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("user", data.user);
+        router.push("/service");
+      })
+      .catch((err) => {
+        console.error(err);
+        toast.error(err.response.data.message);
+      });
   };
 
   return (

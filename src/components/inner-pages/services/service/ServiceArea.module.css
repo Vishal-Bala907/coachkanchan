@@ -1,0 +1,13 @@
+.viewDetailsButton {
+  padding: 10px 20px;
+  color: #ffe000;
+  background: linear-gradient(90deg, #00394f, #14b2f1);
+  background-size: 200% 100%;
+  background-position: 0% 50%;
+  transition: background-position 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.viewDetailsButton:hover {
+  background-position: 100% 50%;
+  color: #fffacd; /* Slightly lighter yellow */
+}

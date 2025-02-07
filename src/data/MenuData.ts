@@ -34,12 +34,13 @@ const menu_data: MenuItem[] = [
     title: "Courses",
     link: "/service",
   },
-  {
-    id: 4,
-    has_dropdown: false,
-    title: "Gallery",
-    link: "/gallery",
-  },
+
+  // {
+  //   id: 4,
+  //   has_dropdown: false,
+  //   title: "Gallery",
+  //   link: "/gallery",
+  // },
   // {
   //   id: 3,
   //   has_dropdown: true,
@@ -92,6 +93,12 @@ const menu_data: MenuItem[] = [
     has_dropdown: false,
     title: "Contact",
     link: "/contact",
+  },
+  {
+    id: 4,
+    has_dropdown: false,
+    title: "Login",
+    link: "/login",
   },
 ];
 export default menu_data;

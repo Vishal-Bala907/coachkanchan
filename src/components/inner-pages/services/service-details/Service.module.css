@@ -1,0 +1,32 @@
+/* @media screen and (min-width: 1440px) { */
+.image {
+  max-width: 400px;
+  width: 330px;
+  height: auto;
+  max-height: 400px;
+  border: 2px solid white;
+  border-radius: 10px;
+}
+.mainArea {
+  max-width: 800px;
+  margin: 7% auto;
+}
+.primarySection {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 20px 30px;
+  align-items: center;
+  /* justify-content: space-between; */
+}
+.side {
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 25px;
+  padding: 20px;
+}
+/* } */
