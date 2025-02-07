@@ -7,7 +7,7 @@ import avatar_1 from "@/assets/img/testimonial/bbc.jpeg";
 import avatar_2 from "@/assets/img/testimonial/2.jpeg";
 import avatar_3 from "@/assets/img/testimonial/3.jpeg";
 import avatar_4 from "@/assets/img/testimonial/4.jpeg";
-import avatar_5 from "@/assets/img/testimonial/4.jpeg";
+import avatar_5 from "@/assets/img/testimonial/5.jpeg";
 
 interface DataType {
   id: number;
@@ -116,31 +116,6 @@ const testi_data: DataType[] = [
         challenges. If you&apos;re a student feeling overwhelmed or a parent
         wanting to support your child better, this book provides the
         understanding and tools that traditional academic advice often misses.
-      </>
-    ),
-    avatar: avatar_4,
-  },
-  {
-    id: 5,
-    desc_1: (
-      <>
-        I am working in IT from 2011, it was a progressive and rewarding
-        journey. At some point 2023, I was having lack of motivation and
-        direction in both professional as well as personal life. Then I met the
-        coach through my personal network. She helped to understand my own
-        strengths and areas of improvement in the behavioral & structural
-        aspects. The strategies I learned helped me to focus on near term goals
-        by keeping the long journey in sight
-      </>
-    ),
-    desc_2: (
-      <>
-        I got back my sense of achievement and started enjoying the work & life
-        more. This was the result of 4 months of consultation that was truly
-        personalized according to my situation. This book is for everyone, to
-        know ‘what really matters’, to become more aware of your action plan and
-        to have some practical strategies that help you to grow in the area that
-        you want to grow.
       </>
     ),
     avatar: avatar_4,
