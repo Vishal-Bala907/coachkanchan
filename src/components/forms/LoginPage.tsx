@@ -56,7 +56,7 @@ const LoginPage: React.FC = () => {
       .then((data) => {
         toast.success("Login Successfull...");
         localStorage.setItem("token", data.token);
-        localStorage.setItem("user", data.user);
+        localStorage.setItem("user", JSON.stringify(data.user));
         router.push("/service");
       })
       .catch((err) => {

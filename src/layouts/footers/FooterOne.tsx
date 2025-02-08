@@ -77,7 +77,7 @@ const FooterOne = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link href={`/blog-0`}>
+                    <Link href={`/blog/${"new"}`}>
                       <i className="fa-solid fa-chevron-right"></i>Our Blog
                     </Link>
                   </li>

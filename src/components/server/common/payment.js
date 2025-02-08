@@ -1,0 +1,22 @@
+import apiClient from "../config";
+
+export const createPayment = async (payment) => {
+  try {
+    const response = await apiClient.post(`/api/v1/pay/create-order`, payment);
+    // console.log(response);
+    return response.data;
+  } catch (err) {
+    throw err;
+  }
+};
+export const varifyPayment = async (paymentDetails) => {
+  try {
+    const response = await apiClient.post(
+      `/api/v1/pay/verify-payment`,
+      paymentDetails
+    );
+    return response.data;
+  } catch (err) {
+    throw err;
+  }
+};

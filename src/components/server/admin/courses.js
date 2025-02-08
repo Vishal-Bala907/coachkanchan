@@ -23,3 +23,12 @@ export const getAllCourses = async () => {
     throw err;
   }
 };
+export const getCourseById = async (id) => {
+  console.log(id);
+  try {
+    const response = await apiClient.get(`/api/v1/admin/course/${id}`);
+    return response.data;
+  } catch (err) {
+    throw err;
+  }
+};

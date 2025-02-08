@@ -4,13 +4,14 @@ import React from "react";
 
 export const metadata = {
   title:
-    "Blog Details industril - Factory and Industrial React Next js Template",
+    "Blog Details kanchan -",
 };
-const page = () => {
+const page = async ({ params }: { params: { id: string } }) => {
+  const { id } = await params;
   return (
     <div>
       <Wrapper>
-        <BlogDetails />
+        <BlogDetails id={id} />
       </Wrapper>
     </div>
   );
