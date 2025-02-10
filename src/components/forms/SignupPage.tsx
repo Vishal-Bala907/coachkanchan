@@ -30,6 +30,7 @@ const SignupPage: React.FC = () => {
   const [mobile, setMobile] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
   const el = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
@@ -53,7 +54,7 @@ const SignupPage: React.FC = () => {
   // const router = useRouter
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    registerUser({ email, phone: mobile, password })
+    registerUser({ email, phone: mobile, password, name })
       .then((data) => {
         console.log(data);
         toast.success("sign up success");
@@ -97,6 +98,19 @@ const SignupPage: React.FC = () => {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                required
+                sx={{
+                  margin: "20px 10%",
+                  width: "80%",
+                }}
+              />
+              <TextField
+                fullWidth
+                label="Username"
+                variant="outlined"
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 required
                 sx={{
                   margin: "20px 10%",

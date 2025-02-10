@@ -49,7 +49,6 @@ const ServiceDetailsArea = ({ id }: any) => {
       .then((data) => {
         if (data.course) {
           // console.log(data);
-
           setCourse(data.course);
         }
       })
@@ -75,6 +74,9 @@ const ServiceDetailsArea = ({ id }: any) => {
         currency: "INR",
       });
 
+      const user = localStorage.getItem("user");
+      const USER = user ? JSON.parse(user) : { name: "", email: "" };
+
       const options = {
         key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
         amount: order.amount,
@@ -88,9 +90,12 @@ const ServiceDetailsArea = ({ id }: any) => {
               razorpay_order_id: response.razorpay_order_id,
               razorpay_payment_id: response.razorpay_payment_id,
               razorpay_signature: response.razorpay_signature,
+              amount: +course.offerPrice,
+              userId: USER._id,
+              courseId: id,
             });
 
-            if (verifyRes.data.success) {
+            if (verifyRes.success) {
               toast.success("Payment Successful!");
             } else {
               toast.error("Payment Verification Failed");
@@ -101,9 +106,9 @@ const ServiceDetailsArea = ({ id }: any) => {
           }
         },
         prefill: {
-          name: "John Doe",
-          email: "johndoe@example.com",
-          contact: "9999999999",
+          name: USER.email,
+          email: USER.email,
+          contact: USER.phone,
         },
         theme: {
           color: "#14b2f1",

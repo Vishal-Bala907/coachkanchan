@@ -20,3 +20,14 @@ export const varifyPayment = async (paymentDetails) => {
     throw err;
   }
 };
+
+export const fetchPayments = async (page, rowsPerPage) => {
+  try {
+    const response = await apiClient.get(
+      `/api/v1/pay/payments?page=${page + 1}&limit=${rowsPerPage}`
+    );
+    return response.data;
+  } catch (err) {
+    throw err;
+  }
+};

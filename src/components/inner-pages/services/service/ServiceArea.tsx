@@ -43,7 +43,8 @@ const ServiceArea = () => {
   ]);
   function handleViewDetails(id: any) {
     const token = localStorage.getItem("token");
-    if (!token) {
+    const user = localStorage.getItem("user");
+    if (!token || !user) {
       toast.warning("Please Login First");
       return;
     }
