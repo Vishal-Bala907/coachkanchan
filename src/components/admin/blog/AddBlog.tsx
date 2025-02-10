@@ -1,7 +1,8 @@
 "use client";
 import { addNewBlog } from "@/components/server/admin/blog";
 import React, { useState } from "react";
-import ReactQuill from "react-quill-new";
+import dynamic from "next/dynamic";
+const ReactQuill = dynamic(() => import("react-quill-new"), { ssr: false });
 import "react-quill-new/dist/quill.snow.css";
 import { toast } from "react-toastify";
 // import { addNewBlog } from "../../server/admin/blog";
