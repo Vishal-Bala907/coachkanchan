@@ -81,7 +81,7 @@ const ServiceArea = () => {
               <div className="service-items-2">
                 <div className="service-image">
                   <img
-                    src={`http://localhost:5000${item.image}`}
+                    src={`${process.env.NEXT_PUBLIC_BASE_URL}+${item.image}`}
                     width={300}
                     height={200}
                     style={{
