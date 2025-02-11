@@ -12,7 +12,7 @@ import about_img4 from "@/assets/img/arrow-shape.png";
 import about_img5 from "@/assets/img/fac1.jpeg";
 import about_img6 from "@/assets/img/fac1R.jpeg";
 import about_img7 from "@/assets/img/image4.jpeg";
-import about_img8 from "@/assets/img/placeholder/1062 x 1360.png";
+import about_img8 from "@/assets/img/WhatsApp Image 2025-02-09 at 10.52.35 AM.jpeg";
 
 interface DataType {
   sub_title: string;

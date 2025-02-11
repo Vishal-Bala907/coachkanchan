@@ -6,6 +6,7 @@ import Link from "next/link";
 import style from "./ServiceArea.module.css";
 
 import arrow from "@/assets/img/placeholder/418 x 235.png";
+import update from "@/assets/img/update.png";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
@@ -29,6 +30,7 @@ interface Course {
 
 const ServiceArea = () => {
   const router = useRouter();
+  const [userRole, setUserRole] = useState<String>("USER");
   const [courses, setCourses] = useState<Course[]>([
     {
       _id: 1,
@@ -48,10 +50,14 @@ const ServiceArea = () => {
       toast.warning("Please Login First");
       return;
     }
+
     router.push(`/service-details/${id}`);
   }
 
   useEffect(() => {
+    const token = localStorage.getItem("token");
+    const user = localStorage.getItem("user");
+    if (user) setUserRole(JSON.parse(user).role);
     getAllCourses()
       .then((data) => {
         if (!data?.course?.length) {
@@ -75,9 +81,25 @@ const ServiceArea = () => {
           {courses.map((item) => (
             <div
               key={item._id}
-              className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
+              className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp position-relative"
               // data-wow-delay={item.data_wow_delay}
             >
+              {userRole === "ADMIN" && (
+                <div
+                  className="position-absolute"
+                  style={{
+                    right: "20px",
+                    top: "15px",
+                    cursor: "pointer",
+                  }}
+                  onClick={() => {
+                    router.push(`/update-course/${item._id}`);
+                  }}
+                >
+                  <Image src={update} alt="update icon" />
+                </div>
+              )}
+
               <div className="service-items-2">
                 <div className="service-image">
                   <img

@@ -32,3 +32,29 @@ export const getCourseById = async (id) => {
     throw err;
   }
 };
+export const updateCourse = async (id, formData) => {
+  console.log(id);
+  try {
+    const response = await apiClient.put(
+      `/api/v1/admin/update/${id}`,
+      formData,
+      {
+        headers: {
+          "Content-Type": "multipart/form-data", // Automatically handled by FormData, but it's good to explicitly set it
+        },
+      }
+    );
+    return response.data;
+  } catch (err) {
+    throw err;
+  }
+};
+export const deleteCourseById = async (id) => {
+  console.log(id);
+  try {
+    const response = await apiClient.delete(`/api/v1/admin/delete/${id}`);
+    return response.data;
+  } catch (err) {
+    throw err;
+  }
+};

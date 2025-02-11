@@ -10,6 +10,14 @@ import { useRouter } from "next/navigation";
 import { registerUser } from "../server/auth/auth";
 import { toast } from "react-toastify";
 
+type ValidationError = {
+  location: "body" | "query" | "params" | "headers"; // Common locations for validation
+  msg: string; // Error message
+  path: string; // The field that caused the error
+  type: "field" | "other"; // Type of error
+  value?: string; // The invalid value (optional)
+};
+
 const darkTheme = createTheme({
   palette: {
     mode: "dark",
@@ -61,8 +69,14 @@ const SignupPage: React.FC = () => {
         router.push("/login");
       })
       .catch((err) => {
-        console.log(err);
-        toast.error("sign up failed");
+        // console.log(err.response.data.message[0]);
+        const errorArray = err.response.data.message;
+        if (errorArray) {
+          errorArray[0].length > 0 &&
+            errorArray[0].forEach((error: ValidationError) => {
+              toast.error(`sign up failed ${error.msg}`);
+            });
+        }
       });
   };
 

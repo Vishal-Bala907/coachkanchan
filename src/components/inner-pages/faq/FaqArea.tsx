@@ -1,4 +1,4 @@
-import faq_img from "@/assets/img/placeholder/418 x 235.png";
+import faq_img from "@/assets/img/WhatsApp Image 2025-02-09 at 10.52.34 AM.jpeg";
 import Faq from "@/components/common/Faq";
 import Image from "next/image";
 

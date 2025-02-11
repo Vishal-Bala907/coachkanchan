@@ -113,7 +113,7 @@ const DashBoard = () => {
                       {payment.paymentId}
                     </TableCell>
                     <TableCell className="text-light">
-                      ₹{payment.amount / 100}
+                      ₹{payment.amount}
                     </TableCell>
                     <TableCell className="text-light">
                       {payment.courseId ? (

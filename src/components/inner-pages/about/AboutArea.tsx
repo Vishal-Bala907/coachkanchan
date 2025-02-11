@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import about_arrow from "@/assets/img/arrow-shape.png";
-import about_thumb from "@/assets/img/placeholder/665 x 732.png";
+import about_thumb from "@/assets/img/WhatsApp Image 2025-02-09 at 10.52.35 AM.jpeg";
 
 interface ContentType {
   sub_title: string;
