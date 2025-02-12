@@ -12,6 +12,8 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { getBlogById } from "@/components/server/admin/blog";
 import { info } from "console";
+import DiscussSpinner from "@/components/spinners/DiscussSpinner";
+import "../../../admin/blog/quil.css";
 type BlogState = {
   title: string;
   bannerImage: File | null;
@@ -34,8 +36,9 @@ const BlogDetailsArea = ({ id }: any) => {
   });
 
   // console.log(id);
-
+  const [loading, setLoading] = useState<boolean>(false);
   useEffect(() => {
+    setLoading(true);
     getBlogById(id)
       .then((response) => {
         if (response) {
@@ -44,15 +47,22 @@ const BlogDetailsArea = ({ id }: any) => {
       })
       .catch((err) => {
         console.log(err);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   }, []);
 
+  if (loading) {
+    return <DiscussSpinner />;
+  }
+
   return (
-    <section className="news-section fix section-padding">
+    <section className="container-md news-section fix section-padding">
       <div className="container-md">
-        <div className="news-details-area">
-          <div className="d-flex flex-xl-row flex-column flex-wrap justify-content-center align-items-center ">
-            <div className="container mt-5 bg-white text-white rounded shadow-lg w-75">
+        <div className="container-md news-details-area">
+          <div className="container-md d-flex flex-xl-row flex-column flex-wrap justify-content-center align-items-center ">
+            <div className="container-md mt-5 bg-white text-white rounded shadow-lg w-75">
               {/* Container for the banner and overlapping images */}
               <div className="position-relative">
                 {/* Blog Banner Image */}
@@ -60,7 +70,7 @@ const BlogDetailsArea = ({ id }: any) => {
                   src={`${process.env.NEXT_PUBLIC_BASE_URL}${blog.bannerImage}`}
                   alt="Blog Banner"
                   className="img-fluid w-100 rounded"
-                  style={{ height: "300px", objectFit: "cover" }}
+                  style={{ height: "auto", objectFit: "cover" }}
                 />
 
                 {/* Additional Images */}
@@ -74,7 +84,7 @@ const BlogDetailsArea = ({ id }: any) => {
                     className="img-thumbnail rounded shadow-lg"
                     style={{
                       width: "30%",
-                      height: "120px",
+                      height: "auto",
                       objectFit: "cover",
                     }}
                   />
@@ -84,7 +94,7 @@ const BlogDetailsArea = ({ id }: any) => {
                     className="img-thumbnail rounded shadow-lg"
                     style={{
                       width: "30%",
-                      height: "120px",
+                      height: "auto",
                       objectFit: "cover",
                     }}
                   />
@@ -92,18 +102,16 @@ const BlogDetailsArea = ({ id }: any) => {
               </div>
 
               {/* Blog Heading */}
-              <h3 className="mt-5 fw-bold text-white text-center">
+              <p className="mt-5 fw-bold text-black text-center">
                 {blog.blogHeading}
-              </h3>
+              </p>
 
               {/* Blog Description */}
-              <p className="text-secondary text-center">
-                {blog.blogDescription}
-              </p>
+              <p className="text-black  text-center">{blog.blogDescription}</p>
 
               {/* Blog Content */}
               <div
-                className="mt-3 text-white"
+                className="mt-3 text-black ql-editor"
                 dangerouslySetInnerHTML={{ __html: blog.blogContent }}
               />
             </div>

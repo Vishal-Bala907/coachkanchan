@@ -4,11 +4,12 @@ import style from "./Service.module.css";
 import { toast } from "react-toastify";
 import { getCourseById } from "@/components/server/admin/courses";
 import { createPayment, varifyPayment } from "../../../server/common/payment";
+import DiscussSpinner from "@/components/spinners/DiscussSpinner";
 
 type CourseState = {
   title: string;
   shortDec: string | null;
-  longDec: string | null;
+  longDec: string;
   image: string | null;
   price: string;
   offerPrice: string;
@@ -43,6 +44,7 @@ const ServiceDetailsArea = ({ id }: any) => {
   });
   const [loading, setLoading] = useState<boolean>(false);
 
+  // const [loading, setLoading] = useState<boolean>(false);
   useEffect(() => {
     setLoading(true);
     getCourseById(id)
@@ -126,7 +128,7 @@ const ServiceDetailsArea = ({ id }: any) => {
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <DiscussSpinner />;
   }
 
   return (
@@ -177,7 +179,10 @@ const ServiceDetailsArea = ({ id }: any) => {
             </button>
           </div>
         </section>
-        <article style={{ margin: "20px 30px" }}>{course.longDec}</article>
+        <div
+          style={{ margin: "20px 30px" }}
+          dangerouslySetInnerHTML={{ __html: course.longDec }}
+        />
       </main>
     </>
   );

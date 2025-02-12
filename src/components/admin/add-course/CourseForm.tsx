@@ -15,7 +15,7 @@ import dynamic from "next/dynamic";
 import "react-quill-new/dist/quill.snow.css";
 import { log } from "console";
 import { toast } from "react-toastify";
-
+import "../blog/quil.css";
 // Dynamically import react-quill-new to prevent SSR issues
 const ReactQuill = dynamic(() => import("react-quill-new"), { ssr: false });
 
@@ -168,7 +168,7 @@ const CourseForm: React.FC = () => {
                     {...field}
                     theme="snow"
                     onChange={(value) => field.onChange(value)}
-                    className="bg-dark text-white rounded"
+                    className="bg-white text-black rounded"
                     style={{ minHeight: "150px" }}
                   />
                 )}

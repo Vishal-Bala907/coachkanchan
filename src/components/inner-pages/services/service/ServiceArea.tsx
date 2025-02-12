@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import { getAllCourses } from "@/components/server/admin/courses";
+import DiscussSpinner from "@/components/spinners/DiscussSpinner";
 
 interface SoldCourse {
   date: string; // ISO date string format
@@ -43,6 +44,8 @@ const ServiceArea = () => {
       sold: [{ date: "dfdf", userId: "4544" }], // Array of sold course details
     },
   ]);
+  const [loading, setLoading] = useState<boolean>(false);
+
   function handleViewDetails(id: any) {
     const token = localStorage.getItem("token");
     const user = localStorage.getItem("user");
@@ -58,6 +61,7 @@ const ServiceArea = () => {
     const token = localStorage.getItem("token");
     const user = localStorage.getItem("user");
     if (user) setUserRole(JSON.parse(user).role);
+    setLoading(true);
     getAllCourses()
       .then((data) => {
         if (!data?.course?.length) {
@@ -71,8 +75,15 @@ const ServiceArea = () => {
       .catch((err) => {
         console.error("Error fetching courses:", err);
         toast.error("Failed to fetch courses");
+      })
+      .finally(() => {
+        setLoading(false);
       });
   }, []);
+
+  if (loading) {
+    return <DiscussSpinner />;
+  }
 
   return (
     <section className="service-section-2 fix section-padding">
