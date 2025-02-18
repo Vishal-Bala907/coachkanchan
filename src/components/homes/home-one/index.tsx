@@ -19,6 +19,7 @@ import Image from "next/image";
 import img from "@/assets/img/BlueModernFuturisticBusinessRoadmap3.png";
 import clients from "@/assets/img/clients.png";
 import Testimonial from "../home-three/Testimonial";
+import BookDetails from "@/components/common/BooksDetails";
 const HomeOne = () => {
   return (
     <>
@@ -27,7 +28,10 @@ const HomeOne = () => {
         <Hero />
         <About2 />
         <MarqueSection />
+        <BookDetails />
+
         <Service />
+
         {/* <Project /> */}
         <About />
         {/* certificate */}

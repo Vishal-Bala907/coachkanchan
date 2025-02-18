@@ -13,8 +13,8 @@ const HeaderTop = () => {
               </Link>
             </li>
             <li>
-              <i className="fas fa-map-marker-alt me-2"></i>
-              F-7, Arunoday Complex, Opp. Little Hut, GIDC Estate Ankleshwar.
+              {/* <i className="fas fa-map-marker-alt me-2"></i> */}
+              {/* F-7, Arunoday Complex, Opp. Little Hut, GIDC Estate Ankleshwar. */}
             </li>
           </ul>
         </div>
