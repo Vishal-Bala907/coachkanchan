@@ -44,11 +44,11 @@ const BookDetails = () => {
                 14-25. Combining the wisdom of resilience, habit-building, and
                 emotional intelligence, this book provides actionable strategies
                 to mentor learners toward academic success. With real-life
-                examples, personalized tips, and the groundbreaking "GPS System
-                for Academic Success," Dr. Kabra offers a roadmap to not only
-                navigate challenges but to thrive in them. Whether you’re
-                guiding a struggling student or aiming for personal growth, this
-                book is your ultimate companion.
+                examples, personalized tips, and the groundbreaking &quot;GPS
+                System for Academic Success,&quot; Dr. Kabra offers a roadmap to
+                not only navigate challenges but to thrive in them. Whether
+                you’re guiding a struggling student or aiming for personal
+                growth, this book is your ultimate companion.
               </p>
 
               {/* About the Author */}
