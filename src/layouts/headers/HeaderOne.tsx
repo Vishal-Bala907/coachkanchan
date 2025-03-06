@@ -56,10 +56,11 @@ const HeaderOne = ({ headerTop }: any) => {
                 </div>
                 <div className="header-right d-flex justify-content-end align-items-center">
                   <div className="header-contact">
-                    <div className="icon">
+                    {/* <div className="icon">
                       <i className="fa-solid fa-phone-volume"></i>
-                    </div>
-                    <a href="tel:9096207767">90962 07767</a>
+                    </div> */}
+                    {/* <a href="tel:9096207767">90962 07767</a> */}
+                    <Link href="/login">login</Link>
                   </div>
                   <div className="header__hamburger d-xl-block my-auto">
                     <div

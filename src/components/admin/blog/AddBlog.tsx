@@ -96,7 +96,7 @@ const AddBlog: React.FC = () => {
   };
 
   return (
-    <div className="container mt-5 text-white bg-dark p-4 rounded">
+    <div className="container  text-white bg-dark p-4 rounded">
       <h2 className="text-center">Add New Blog</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">

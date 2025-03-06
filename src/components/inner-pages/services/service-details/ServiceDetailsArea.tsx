@@ -5,6 +5,9 @@ import { toast } from "react-toastify";
 import { getCourseById } from "@/components/server/admin/courses";
 import { createPayment, varifyPayment } from "../../../server/common/payment";
 import DiscussSpinner from "@/components/spinners/DiscussSpinner";
+import { ReviewType } from "@/types/reviewtype";
+import ViewCourseReviews from "../../reviews/ViewCourseReviews";
+import CourseReviewForm from "@/components/forms/CourseReviewForm";
 
 type CourseState = {
   title: string;
@@ -32,8 +35,8 @@ const loadRazorpayScript = () => {
 };
 
 const ServiceDetailsArea = ({ id }: any) => {
-  console.log(id);
-
+  // console.log(id);
+  const [Reviews, setReviews] = useState<ReviewType[] | []>([]);
   const [course, setCourse] = useState<CourseState>({
     title: "",
     shortDec: "null",
@@ -50,8 +53,12 @@ const ServiceDetailsArea = ({ id }: any) => {
     getCourseById(id)
       .then((data) => {
         if (data.course) {
-          // console.log(data);
+          console.log(data);
           setCourse(data.course);
+
+          if (data.course.ratings && data.course.ratings.length > 0) {
+            setReviews(data.course.ratings);
+          }
         }
       })
       .catch((err) => {
@@ -183,6 +190,10 @@ const ServiceDetailsArea = ({ id }: any) => {
           style={{ margin: "20px 30px" }}
           dangerouslySetInnerHTML={{ __html: course.longDec }}
         />
+        <div className="d-flex flex-md-row  flex-column align-items-center justify-content-center flex-row gap-3">
+          <CourseReviewForm id={id} />
+          <ViewCourseReviews reviews={Reviews} />
+        </div>
       </main>
     </>
   );
