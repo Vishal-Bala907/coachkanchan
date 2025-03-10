@@ -1,8 +1,3 @@
-// import DashBoard from "@/components/admin/dashboard/Sales";
-// import DashBoard from "@/components/admin/dashboard/DashBoard";
-// import DashBoard from "@/components/admin/dashboard/Dashboard";
-// import DashBoard from "../../../components/admin/dashboard/Dashboard";
-"use client";
 import DashBoard from "@/components/admin/dashboard/Dashboard";
 import React from "react";
 
