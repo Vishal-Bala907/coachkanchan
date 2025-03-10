@@ -23,8 +23,7 @@ const DashBoard = () => {
         ) : selectedTab === "ADDBLOG" ? (
           <AddBlog />
         ) : selectedTab === "BOOKING" ? (
-          // <BookingList />
-          <div>list</div>
+          <BookingList />
         ) : (
           selectedTab === "QUERY" && <AdminQuery />
         )}
