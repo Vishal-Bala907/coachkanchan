@@ -4,7 +4,7 @@ import Sidebar from "@/components/common/SideBar";
 import Sales from "../admin/dashboard/Sales";
 import CourseForm from "../admin/add-course/CourseForm";
 import AddBlog from "../admin/blog/AddBlog";
-import "./customstyle.css";
+import "../admin/dashboard/customstyle.css";
 import AdminQuery from "@/components/common/AdminQuery";
 import BookingList from "@/components/common/BookingRequestsDetails";
 
