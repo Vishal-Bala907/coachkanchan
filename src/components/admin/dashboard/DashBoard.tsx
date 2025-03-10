@@ -1,12 +1,12 @@
 "use client";
 import React, { useState } from "react";
 import Sidebar from "@/components/common/SideBar";
-import Sales from "./Sales";
-import CourseForm from "../add-course/CourseForm";
-import AddBlog from "../blog/AddBlog";
 import "./customstyle.css";
-import AdminQuery from "@/components/common/AdminQuery";
-import BookingList from "@/components/common/BookingRequestsDetails";
+// import Sales from "./Sales";
+// import CourseForm from "../add-course/CourseForm";
+// import AddBlog from "../blog/AddBlog";
+// import AdminQuery from "@/components/common/AdminQuery";
+// import BookingList from "@/components/common/BookingRequestsDetails";
 
 const DashBoard = () => {
   const [selectedTab, setSelectedTab] = useState<string>("SALES");
@@ -15,7 +15,7 @@ const DashBoard = () => {
       <div className="sidebar-wrapper">
         <Sidebar selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
       </div>
-      <div className="dsb-items-wrapper">
+      {/* <div className="dsb-items-wrapper">
         {selectedTab === "SALES" ? (
           <Sales />
         ) : selectedTab === "ADDCOURSE" ? (
@@ -27,7 +27,7 @@ const DashBoard = () => {
         ) : (
           selectedTab === "QUERY" && <AdminQuery />
         )}
-      </div>
+      </div> */}
     </div>
   );
 };
