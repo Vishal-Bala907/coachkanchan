@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect } from "react";
 import dummyData from "@/types/queryData";
 import { Query, QueryUser } from "@/types/query";
