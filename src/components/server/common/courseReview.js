@@ -39,3 +39,24 @@ export const getAllQueries = async () => {
     throw err;
   }
 };
+export const createBookingRequest = async (formData) => {
+  try {
+    const response = await apiClient.post(
+      `/api/v1/booking/book-event`,
+      formData
+    );
+    // console.log(response);
+    return response.data;
+  } catch (err) {
+    throw err;
+  }
+};
+export const getAllBookings = async (formData) => {
+  try {
+    const response = await apiClient.get(`/api/v1/booking/all-bookings`);
+    // console.log(response);
+    return response.data;
+  } catch (err) {
+    throw err;
+  }
+};

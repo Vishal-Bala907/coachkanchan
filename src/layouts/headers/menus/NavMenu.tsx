@@ -32,11 +32,12 @@ const NavMenu = () => {
     }
   }, []);
 
-  const handleQuery = () => {
+  const handleQuery = (para: string) => {
     const USER = localStorage.getItem("user");
     if (USER) {
       const U = JSON.parse(USER);
-      router.push(`/query/${U._id}`);
+      if (para === "qry") router.push(`/query/${U._id}`);
+      else if (para === "booking") router.push(`/book-event`);
     } else {
       toast.warn("Please Login First...");
     }
@@ -111,16 +112,36 @@ const NavMenu = () => {
           </li>
         ))}
       {ROLE !== "ADMIN" && (
-        <li onClick={handleQuery}>
-          <span
-            className={`text-white fw-bold`}
-            style={{
-              cursor: "pointer",
+        <>
+          <li
+            onClick={() => {
+              handleQuery("qry");
             }}
           >
-            Query
-          </span>
-        </li>
+            <span
+              className={`text-white fw-bold`}
+              style={{
+                cursor: "pointer",
+              }}
+            >
+              Query
+            </span>
+          </li>
+          <li
+            onClick={() => {
+              handleQuery("booking");
+            }}
+          >
+            <span
+              className={`text-white fw-bold`}
+              style={{
+                cursor: "pointer",
+              }}
+            >
+              Book Event
+            </span>
+          </li>
+        </>
       )}
     </ul>
   );
