@@ -1,12 +1,14 @@
 "use client";
 import menu_data from "@/data/MenuData";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import admin_routes from "@/data/Admin";
+import { usePathname, useRouter } from "next/navigation";
+import admin_routes, { user_routes } from "@/data/Admin";
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 const NavMenu = () => {
   const currentRoute = usePathname();
+  const router = useRouter();
 
   const isMenuItemActive = (menuLink: string) => {
     return currentRoute === menuLink;
@@ -29,6 +31,16 @@ const NavMenu = () => {
       }
     }
   }, []);
+
+  const handleQuery = () => {
+    const USER = localStorage.getItem("user");
+    if (USER) {
+      const U = JSON.parse(USER);
+      router.push(`/query/${U._id}`);
+    } else {
+      toast.warn("Please Login First...");
+    }
+  };
 
   return (
     <ul>
@@ -98,6 +110,18 @@ const NavMenu = () => {
             </Link>
           </li>
         ))}
+      {ROLE !== "ADMIN" && (
+        <li onClick={handleQuery}>
+          <span
+            className={`text-white fw-bold`}
+            style={{
+              cursor: "pointer",
+            }}
+          >
+            Query
+          </span>
+        </li>
+      )}
     </ul>
   );
 };

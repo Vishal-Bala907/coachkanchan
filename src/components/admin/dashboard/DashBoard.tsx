@@ -5,11 +5,12 @@ import Sales from "./Sales";
 import CourseForm from "../add-course/CourseForm";
 import AddBlog from "../blog/AddBlog";
 import "./customstyle.css";
+import AdminQuery from "@/components/common/AdminQuery";
 
 const DashBoard = () => {
   const [selectedTab, setSelectedTab] = useState<string>("SALES");
   return (
-    <div className="d-flex flex-lg-row flex-column">
+    <div className="d-flex flex-lg-row flex-column overflow-hidden">
       <div className="sidebar-wrapper">
         <Sidebar selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
       </div>
@@ -21,7 +22,7 @@ const DashBoard = () => {
         ) : selectedTab === "ADDBLOG" ? (
           <AddBlog />
         ) : (
-          selectedTab === "QUERY" && <Sales />
+          selectedTab === "QUERY" && <AdminQuery />
         )}
       </div>
     </div>

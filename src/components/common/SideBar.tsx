@@ -9,7 +9,7 @@ interface SidebarProps {
 const SideBar: React.FC<SidebarProps> = ({ selectedTab, setSelectedTab }) => {
   return (
     <div>
-      <div className="d-flex flex-column flex-shrink-0 p-3 text-bg-dark h-100">
+      <div className="d-flex flex-column flex-shrink-0 p-3 text-bg-dark h-100 overflow-x-auto">
         <a
           href="/"
           className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
@@ -20,7 +20,7 @@ const SideBar: React.FC<SidebarProps> = ({ selectedTab, setSelectedTab }) => {
           <span className="fs-4">Coach Kanchan</span>
         </a>
         <hr />
-        <ul className="nav nav-pills flex-lg-column flex-row mb-auto">
+        <ul className="nav nav-pills mb-auto d-flex flex-lg-column flex-row dashboard-ul">
           <li>
             <span
               className={`nav-link  ${
@@ -31,9 +31,9 @@ const SideBar: React.FC<SidebarProps> = ({ selectedTab, setSelectedTab }) => {
                 cursor: "pointer",
               }}
             >
-              <svg className="bi pe-none me-2" width="16" height="16">
+              {/* <svg className="bi pe-none me-2" width="16" height="16">
                 <use xlinkHref="#grid"></use>
-              </svg>
+              </svg> */}
               Dashboard
             </span>
           </li>
@@ -47,9 +47,9 @@ const SideBar: React.FC<SidebarProps> = ({ selectedTab, setSelectedTab }) => {
                 cursor: "pointer",
               }}
             >
-              <svg className="bi pe-none me-2" width="16" height="16">
+              {/* <svg className="bi pe-none me-2" width="16" height="16">
                 <use xlinkHref="#speedometer2"></use>
-              </svg>
+              </svg> */}
               Add Course
             </span>
           </li>
@@ -63,9 +63,9 @@ const SideBar: React.FC<SidebarProps> = ({ selectedTab, setSelectedTab }) => {
                 cursor: "pointer",
               }}
             >
-              <svg className="bi pe-none me-2" width="16" height="16">
+              {/* <svg className="bi pe-none me-2" width="16" height="16">
                 <use xlinkHref="#table"></use>
-              </svg>
+              </svg> */}
               Add Blog
             </span>
           </li>
@@ -80,9 +80,9 @@ const SideBar: React.FC<SidebarProps> = ({ selectedTab, setSelectedTab }) => {
                 cursor: "pointer",
               }}
             >
-              <svg className="bi pe-none me-2" width="16" height="16">
+              {/* <svg className="bi pe-none me-2" width="16" height="16">
                 <use xlinkHref="#people-circle"></use>
-              </svg>
+              </svg> */}
               Query&apos;s
             </span>
           </li>

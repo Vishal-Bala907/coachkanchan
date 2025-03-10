@@ -1,0 +1,43 @@
+.sidebarHover:hover {
+  background-color: rgba(0, 162, 255, 0.925);
+  cursor: pointer;
+}
+.sidebarHoverActive {
+  background-color: rgba(0, 162, 255, 0.925);
+  cursor: pointer;
+}
+
+@media screen and (min-width: 992px) {
+  .admin-query-sidebar-sm-visible {
+    width: 35%;
+    height: 85vh;
+    transition: all 0.4s ease-in-out;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .admin-query-sidebar-sm-visible {
+    width: 30%;
+    height: 85vh;
+    transition: all 0.4s ease-in-out;
+  }
+}
+@media screen and (max-width: 768px) {
+  .admin-query-sidebar-sm-visible {
+    display: block;
+    position: absolute;
+    z-index: 90;
+    width: 60%;
+    padding-top: 20px;
+    height: 85vh;
+    transition: all 0.4s ease-in-out;
+  }
+  .admin-query-sidebar-sm-invisible {
+    display: block;
+    position: absolute;
+    z-index: 90;
+    width: 0%;
+    height: 85vh;
+    padding-top: 0px;
+    transition: all 0.4s ease-in-out;
+  }
+}
