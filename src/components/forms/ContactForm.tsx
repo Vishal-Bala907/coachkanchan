@@ -47,7 +47,7 @@ const ContactForm = () => {
    };
 
    return (
-      <form ref={form} onSubmit={handleSubmit(sendEmail)} id="contact-form">
+      <form ref={form} onSubmit={handleSubmit(sendEmail)} id="contact-form ">
          <div className="row g-4">
             <div className="col-lg-6">
                <div className="form-clt">
