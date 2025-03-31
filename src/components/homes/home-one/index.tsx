@@ -20,6 +20,7 @@ import img from "@/assets/img/BlueModernFuturisticBusinessRoadmap3.png";
 import clients from "@/assets/img/clients.png";
 import Testimonial from "../home-three/Testimonial";
 import BookDetails from "@/components/common/BooksDetails";
+import ContactForm from "./ContactForm";
 import VideoGlider from "@/components/common/VideoGlider";
 const HomeOne = () => {
   return (
@@ -29,6 +30,7 @@ const HomeOne = () => {
         <Hero />
         <VideoGlider />
         <About2 />
+        <ContactForm />
         <MarqueSection />
         <BookDetails />
 
