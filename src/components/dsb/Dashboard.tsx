@@ -7,10 +7,12 @@ import AddBlog from "../admin/blog/AddBlog";
 import "../admin/dashboard/customstyle.css";
 import AdminQuery from "@/components/common/AdminQuery";
 import BookingList from "@/components/common/BookingRequestsDetails";
-import ManageVideo from "../admin/video/ManageVideo";
+import WorkshopForm from "../admin/add-workshop/WorkshopForm"; // ✅ Keep this from your branch
+import ManageVideo from "../admin/video/ManageVideo"; // ✅ Keep this from main branch
 
 const DashBoard = () => {
   const [selectedTab, setSelectedTab] = useState<string>("SALES");
+
   return (
     <div className="d-flex flex-lg-row flex-column overflow-hidden">
       <div className="sidebar-wrapper">
@@ -27,9 +29,11 @@ const DashBoard = () => {
           <BookingList />
         ) : selectedTab === "QUERY" ? (
           <AdminQuery />
-        ) : (
-          selectedTab === "VIDEO" && <ManageVideo />
-        )}
+        ) : selectedTab === "ADDWORKSHOP" ? ( // ✅ Keep this condition
+          <WorkshopForm />
+        ) : selectedTab === "VIDEO" ? ( // ✅ Keep this condition
+          <ManageVideo />
+        ) : null}
       </div>
     </div>
   );

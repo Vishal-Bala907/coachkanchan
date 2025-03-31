@@ -56,6 +56,20 @@ const SideBar: React.FC<SidebarProps> = ({ selectedTab, setSelectedTab }) => {
           <li>
             <span
               className={`nav-link ${
+                selectedTab === "ADDWORKSHOP" && "active"
+              } text-white`}
+              onClick={() => setSelectedTab("ADDWORKSHOP")}
+              style={{
+                cursor: "pointer",
+              }}
+            >
+              Add Workshop
+            </span>
+          </li>
+
+          <li>
+            <span
+              className={`nav-link ${
                 selectedTab === "ADDBLOG" && "active"
               } text-white`}
               onClick={() => setSelectedTab("ADDBLOG")}
