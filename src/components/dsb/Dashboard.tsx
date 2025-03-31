@@ -7,9 +7,11 @@ import AddBlog from "../admin/blog/AddBlog";
 import "../admin/dashboard/customstyle.css";
 import AdminQuery from "@/components/common/AdminQuery";
 import BookingList from "@/components/common/BookingRequestsDetails";
+import WorkshopForm from "../admin/add-workshop/WorkshopForm";
 
 const DashBoard = () => {
   const [selectedTab, setSelectedTab] = useState<string>("SALES");
+
   return (
     <div className="d-flex flex-lg-row flex-column overflow-hidden">
       <div className="sidebar-wrapper">
@@ -24,9 +26,11 @@ const DashBoard = () => {
           <AddBlog />
         ) : selectedTab === "BOOKING" ? (
           <BookingList />
-        ) : (
-          selectedTab === "QUERY" && <AdminQuery />
-        )}
+        ) : selectedTab === "QUERY" ? ( 
+          <AdminQuery />
+        ) : selectedTab === "ADDWORKSHOP" ? (
+          <WorkshopForm />
+        ) : null}
       </div>
     </div>
   );

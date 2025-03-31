@@ -10,6 +10,11 @@ const admin_routes: AdminRoutes[] = [
     title: "Dashboard",
     path: "/dashboard",
   },
+  {
+    id: 4,
+    title: "Workshop",  
+    path: "/workshop",
+  },
 ];
 export const user_routes: AdminRoutes[] = [
   {
