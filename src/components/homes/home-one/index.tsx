@@ -20,12 +20,14 @@ import img from "@/assets/img/BlueModernFuturisticBusinessRoadmap3.png";
 import clients from "@/assets/img/clients.png";
 import Testimonial from "../home-three/Testimonial";
 import BookDetails from "@/components/common/BooksDetails";
+import VideoGlider from "@/components/common/VideoGlider";
 const HomeOne = () => {
   return (
     <>
       <HeaderOne headerTop={true} />
       <main>
         <Hero />
+        <VideoGlider />
         <About2 />
         <MarqueSection />
         <BookDetails />

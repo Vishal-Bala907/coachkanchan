@@ -7,6 +7,7 @@ import AddBlog from "../admin/blog/AddBlog";
 import "../admin/dashboard/customstyle.css";
 import AdminQuery from "@/components/common/AdminQuery";
 import BookingList from "@/components/common/BookingRequestsDetails";
+import ManageVideo from "../admin/video/ManageVideo";
 
 const DashBoard = () => {
   const [selectedTab, setSelectedTab] = useState<string>("SALES");
@@ -24,8 +25,10 @@ const DashBoard = () => {
           <AddBlog />
         ) : selectedTab === "BOOKING" ? (
           <BookingList />
+        ) : selectedTab === "QUERY" ? (
+          <AdminQuery />
         ) : (
-          selectedTab === "QUERY" && <AdminQuery />
+          selectedTab === "VIDEO" && <ManageVideo />
         )}
       </div>
     </div>

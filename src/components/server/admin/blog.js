@@ -28,3 +28,27 @@ export const getRandomThreeBlogs = async () => {
     throw err;
   }
 };
+export const getAllVideos = async () => {
+  try {
+    const response = await apiClient.get(`/api/v1/video/videos`);
+    return response.data;
+  } catch (err) {
+    throw err;
+  }
+};
+export const uploadVideoDetails = async (details) => {
+  try {
+    const response = await apiClient.post(`/api/v1/video/add`, details);
+    return response.data;
+  } catch (err) {
+    throw err;
+  }
+};
+export const deleteVideoById = async (id) => {
+  try {
+    const response = await apiClient.delete(`/api/v1/video/delete/${id}`);
+    return response.data;
+  } catch (err) {
+    throw err;
+  }
+};

@@ -102,6 +102,22 @@ const SideBar: React.FC<SidebarProps> = ({ selectedTab, setSelectedTab }) => {
               Booking Requests
             </span>
           </li>
+          <li>
+            <span
+              className={`nav-link ${
+                selectedTab === "VIDEO" && "active"
+              } text-white`}
+              onClick={() => setSelectedTab("VIDEO")}
+              style={{
+                cursor: "pointer",
+              }}
+            >
+              {/* <svg className="bi pe-none me-2" width="16" height="16">
+                <use xlinkHref="#people-circle"></use>
+              </svg> */}
+              Videos
+            </span>
+          </li>
         </ul>
         <hr />
       </div>
