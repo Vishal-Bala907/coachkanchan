@@ -7,7 +7,8 @@ import AddBlog from "../admin/blog/AddBlog";
 import "../admin/dashboard/customstyle.css";
 import AdminQuery from "@/components/common/AdminQuery";
 import BookingList from "@/components/common/BookingRequestsDetails";
-import WorkshopForm from "../admin/add-workshop/WorkshopForm";
+import WorkshopForm from "../admin/add-workshop/WorkshopForm"; // ✅ Keep this from your branch
+import ManageVideo from "../admin/video/ManageVideo"; // ✅ Keep this from main branch
 
 const DashBoard = () => {
   const [selectedTab, setSelectedTab] = useState<string>("SALES");
@@ -26,10 +27,12 @@ const DashBoard = () => {
           <AddBlog />
         ) : selectedTab === "BOOKING" ? (
           <BookingList />
-        ) : selectedTab === "QUERY" ? ( 
+        ) : selectedTab === "QUERY" ? (
           <AdminQuery />
-        ) : selectedTab === "ADDWORKSHOP" ? (
+        ) : selectedTab === "ADDWORKSHOP" ? ( // ✅ Keep this condition
           <WorkshopForm />
+        ) : selectedTab === "VIDEO" ? ( // ✅ Keep this condition
+          <ManageVideo />
         ) : null}
       </div>
     </div>

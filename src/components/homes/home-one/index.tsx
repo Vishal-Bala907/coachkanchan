@@ -21,14 +21,16 @@ import clients from "@/assets/img/clients.png";
 import Testimonial from "../home-three/Testimonial";
 import BookDetails from "@/components/common/BooksDetails";
 import ContactForm from "./ContactForm";
+import VideoGlider from "@/components/common/VideoGlider";
 const HomeOne = () => {
   return (
     <>
       <HeaderOne headerTop={true} />
       <main>
         <Hero />
+        <VideoGlider />
         <About2 />
-      <ContactForm/>
+        <ContactForm />
         <MarqueSection />
         <BookDetails />
 
