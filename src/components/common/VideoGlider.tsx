@@ -67,7 +67,7 @@ const VideoGlider = () => {
                 <div className="d-flex flex-column justify-content-center align-items-center gap-3">
                   <div
                     className="d-flex flex-row justify-content-center mx-4"
-                    style={{ width: "500px", height: "auto" }}
+                    // style={{ width: "500px", height: "auto" }}
                   >
                     <span style={{ color: "white" }}>{video.title}</span>
                     {/* <MdDeleteOutline
@@ -81,9 +81,10 @@ const VideoGlider = () => {
                   <video
                     ref={videoRef}
                     controls
-                    autoPlay
+                    // autoPlay
+                    muted
                     loop
-                    style={{ width: "500px", height: "500px" }}
+                    // style={{ width: "500px", height: "500px" }}
                     onTouchStart={handleVideoTouch}
                   >
                     <source src={video.url} />
