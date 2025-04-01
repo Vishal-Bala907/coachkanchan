@@ -1,13 +1,13 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Glide from "@glidejs/glide";
 import { getAllVideos } from "../server/admin/blog";
 import { MdDeleteOutline } from "react-icons/md";
-// import { Autoplay } from "@glidejs/glide/dist/glide.modular.esm";
 
 const VideoGlider = () => {
   const [videos, setVideos] = useState([]);
   const [videoCount, setVideoCount] = useState(0);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     getAllVideos()
@@ -21,7 +21,7 @@ const VideoGlider = () => {
   }, []);
 
   useEffect(() => {
-    if (videos.length === 0) return; // Avoid initializing Glide before data is loaded
+    if (videos.length === 0) return;
 
     const glideElement = document.querySelector(".glide");
     if (!glideElement) return;
@@ -41,8 +41,20 @@ const VideoGlider = () => {
     });
     glide.mount();
 
-    return () => glide.destroy(); // Cleanup to prevent memory leaks
-  }, [videos]); // Runs only when videos change
+    return () => glide.destroy();
+  }, [videos]);
+
+  const handleVideoTouch = (e: React.TouchEvent) => {
+    // Check if the event is a touch event
+    if (e.touches.length > 0) {
+      const video = e.currentTarget as HTMLVideoElement;
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    }
+  };
 
   return (
     <div className="my-5">
@@ -50,7 +62,7 @@ const VideoGlider = () => {
         <div className="glide__track" data-glide-el="track">
           <ul className="glide__slides">
             {videos.map((video: any) => (
-              <li key={video._id} className="glide__slide mx-5">
+              <li key={video._id} className="glide__slide md:mx-5">
                 <div className="d-flex flex-column justify-content-center align-items-center gap-3">
                   <div
                     className="d-flex flex-row justify-content-center mx-4"
@@ -66,10 +78,12 @@ const VideoGlider = () => {
                     /> */}
                   </div>
                   <video
+                    ref={videoRef}
                     controls
                     autoPlay
                     loop
                     style={{ width: "500px", height: "500px" }}
+                    onTouchStart={handleVideoTouch}
                   >
                     <source src={video.url} />
                   </video>
