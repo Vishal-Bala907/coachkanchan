@@ -58,6 +58,7 @@ const VideoGlider = () => {
 
   return (
     <div className="my-5">
+      <h2 className="text-center text-white mb-4 ">Workshop Feedback</h2>
       <div className="glide">
         <div className="glide__track" data-glide-el="track">
           <ul className="glide__slides">
