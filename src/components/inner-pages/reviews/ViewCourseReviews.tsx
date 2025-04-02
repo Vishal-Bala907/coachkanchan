@@ -29,7 +29,7 @@ const ViewCourseReviews: React.FC<ViewReviewmProps> = ({ reviews }) => {
                   <div className="d-flex flex-row gap-2 align-items-center justify-content-between">
                     <p>Course Rating</p>
                     <div className="d-flex flex-row gap-2 align-items-center  ">
-                      {Array.from({ length: review.courseRating }).map(
+                      {Array.from({ length: review.courseRating || 0 }).map(
                         (_, i) => (
                           <Image
                             key={i}
@@ -49,7 +49,7 @@ const ViewCourseReviews: React.FC<ViewReviewmProps> = ({ reviews }) => {
                   <div className="d-flex flex-row gap-2 align-items-center justify-content-between">
                     <p>Course Experience Rating</p>
                     <div className="d-flex flex-row gap-2 align-items-center justify-content-center">
-                      {Array.from({ length: review.experienceRating }).map(
+                      {Array.from({ length: review.experienceRating || 0 }).map(
                         (_, i) => (
                           <Image
                             key={i}
@@ -69,7 +69,7 @@ const ViewCourseReviews: React.FC<ViewReviewmProps> = ({ reviews }) => {
                   <div className="d-flex flex-row gap-2 align-items-center justify-content-between">
                     <p>Coach Experience Rating</p>
                     <div className="d-flex flex-row gap-2 align-items-center justify-content-center">
-                      {Array.from({ length: review.coachReview }).map(
+                      {Array.from({ length: review.coachReview || 0 }).map(
                         (_, i) => (
                           <Image
                             key={i}

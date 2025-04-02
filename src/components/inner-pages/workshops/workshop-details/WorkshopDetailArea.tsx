@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import { getWorkshopById } from "@/components/server/admin/workshops";
 import DiscussSpinner from "@/components/spinners/DiscussSpinner";
 import { ReviewType } from "@/types/reviewtype";
-import ViewWorkshopReviews  from "../../reviews/ViewWorkshopReviews";
+import ViewWorkshopReviews from "../../reviews/ViewWorkshopReviews";
 import WorkshopReviewForm from "@/components/forms/WorkshopReviewForm";
 
 type WorkshopState = {
@@ -59,8 +59,8 @@ const WorkshopDetailsArea = ({ id }: any) => {
         <section
           className={`${style.primarySection} justify-content-center justify-content-lg-between`}
         >
-          <img
-            src={`${process.env.NEXT_PUBLIC_BASE_URL}${course.image}`}
+          <Image
+            src={`${process.env.NEXT_PUBLIC_BASE_URL}${workshop.image}`}
             className={`${style.image}`}
             width={300}
             height={200}
