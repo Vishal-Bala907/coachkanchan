@@ -24,8 +24,7 @@ interface WorkshopFormData {
   shortDec: string;
   longDec: string;
   image: File | null;
-  price: number;
-  offerPrice: number;
+ 
 }
 
 const darkTheme = createTheme({
@@ -48,9 +47,7 @@ const WorkshopForm: React.FC = () => {
       formData.append("title", data.title);
       formData.append("shortDec", data.shortDec);
       formData.append("longDec", data.longDec); // Rich text content
-      formData.append("price", data.price.toString());
-      formData.append("offerPrice", data.offerPrice.toString());
-
+     
       if (data.image) {
         formData.append("image", data.image);
       }
@@ -101,39 +98,7 @@ const WorkshopForm: React.FC = () => {
               />
             </div>
 
-            {/* Price & Offer Price */}
-            <div className="d-flex gap-3 mb-3">
-              <Controller
-                name="price"
-                control={control}
-                defaultValue={0}
-                render={({ field }) => (
-                  <TextField
-                    {...field}
-                    label="Price"
-                    type="number"
-                    fullWidth
-                    required
-                    variant="outlined"
-                  />
-                )}
-              />
-              <Controller
-                name="offerPrice"
-                control={control}
-                defaultValue={0}
-                render={({ field }) => (
-                  <TextField
-                    {...field}
-                    label="Offer Price"
-                    type="number"
-                    fullWidth
-                    required
-                    variant="outlined"
-                  />
-                )}
-              />
-            </div>
+         
 
             {/* Short Description */}
             <div className="mb-3">
