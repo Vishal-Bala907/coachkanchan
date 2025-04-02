@@ -14,8 +14,8 @@ type WorkshopState = {
   shortDec: string | null;
   longDec: string;
   image: string | null;
-  price: string;
-  offerPrice: string;
+  // price: string;
+  // offerPrice: string;
 };
 
 const WorkshopDetailsArea = ({ id }: any) => {
@@ -25,8 +25,8 @@ const WorkshopDetailsArea = ({ id }: any) => {
     shortDec: "null",
     longDec: "null",
     image: "null",
-    price: "",
-    offerPrice: "",
+    // price: "",
+    // offerPrice: "",
   });
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -34,6 +34,7 @@ const WorkshopDetailsArea = ({ id }: any) => {
     setLoading(true);
     getWorkshopById(id)
       .then((data) => {
+        console.log("workshop data", data);
         if (data.workshop) {
           setWorkshop(data.workshop);
           if (data.workshop.ratings && data.workshop.ratings.length > 0) {
@@ -59,7 +60,7 @@ const WorkshopDetailsArea = ({ id }: any) => {
         <section
           className={`${style.primarySection} justify-content-center justify-content-lg-between`}
         >
-          <Image
+            <img
             src={`${process.env.NEXT_PUBLIC_BASE_URL}${workshop.image}`}
             className={`${style.image}`}
             width={300}
@@ -71,7 +72,7 @@ const WorkshopDetailsArea = ({ id }: any) => {
             <p>
               <b>{workshop.shortDec}</b>
             </p>
-            <div>
+            {/* <div>
               <p style={{ margin: "25px 0px" }}>
                 Actual Price
                 {" : "}
@@ -95,7 +96,7 @@ const WorkshopDetailsArea = ({ id }: any) => {
                   &#8377; {workshop.offerPrice}
                 </strong>
               </p>
-            </div>
+            </div> */}
           </div>
         </section>
         <div

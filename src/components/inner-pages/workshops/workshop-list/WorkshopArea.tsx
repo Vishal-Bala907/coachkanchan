@@ -14,8 +14,8 @@ interface Workshop {
   shortDec: string;
   longDec: string;
   image: string;
-  price: number;
-  offerPrice: number;
+  // price: number;
+  // offerPrice: number;
 }
 
 const WorkshopArea = () => {
@@ -159,7 +159,7 @@ const WorkshopArea = () => {
                     </h6>
                     <p>{item.shortDec}</p>
                   </div>
-                  <div style={{ width: "25%", margin: "0px 10px" }}>
+                  {/* <div style={{ width: "25%", margin: "0px 10px" }}>
                     <p
                       style={{
                         color: "white",
@@ -189,7 +189,7 @@ const WorkshopArea = () => {
                         &#8377; {item.offerPrice}
                       </strong>
                     </p>
-                  </div>
+                  </div> */}
                 </section>
                 <button
                   onClick={(e) => {
