@@ -3,13 +3,17 @@ import React, { useEffect, useState, useRef } from "react";
 import Glide from "@glidejs/glide";
 import { getAllVideos } from "../server/admin/blog";
 import { MdDeleteOutline } from "react-icons/md";
+import DiscussSpinner from "../spinners/DiscussSpinner";
 
 const VideoGlider = () => {
   const [videos, setVideos] = useState([]);
   const [videoCount, setVideoCount] = useState(0);
+  const [loading, setLoading] = useState<boolean>(false);
+
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
+     setLoading(true);
     getAllVideos()
       .then((res) => {
         setVideos(res);
@@ -17,7 +21,10 @@ const VideoGlider = () => {
       })
       .catch((err) => {
         console.error(err);
-      });
+      })
+      .finally(() => {
+        setLoading(false);
+      });;
   }, []);
 
   useEffect(() => {
@@ -56,6 +63,9 @@ const VideoGlider = () => {
     }
   };
 
+  if (loading) {
+    return <DiscussSpinner />;
+  }
   return (
     <div className="my-5">
       <h2 className="text-center text-white mb-4 ">Workshop Feedback</h2>
