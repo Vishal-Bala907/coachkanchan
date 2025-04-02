@@ -64,7 +64,14 @@ const VideoGlider = () => {
   };
 
   if (loading) {
-    return <DiscussSpinner />;
+   
+    return (
+      <>
+        {" "}
+        <h2 className="text-center text-white m-4 ">Workshop Feedback</h2>{" "}
+        <DiscussSpinner />;
+      </>
+    );
   }
   return (
     <div className="my-5">
@@ -92,7 +99,7 @@ const VideoGlider = () => {
                     ref={videoRef}
                     controls
                     // autoPlay
-                    muted
+                    // muted
                     loop
                     style={{ width: "500px", height: "500px" }}
                     onTouchStart={handleVideoTouch}
