@@ -83,7 +83,8 @@ const ManageVideo = () => {
                   </div>
                   <video
                     controls
-                    autoPlay
+                    // autoPlay
+                    muted
                     loop
                     style={{ width: "500px", height: "500px" }}
                   >
