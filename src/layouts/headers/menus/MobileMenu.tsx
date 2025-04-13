@@ -11,7 +11,7 @@ const MobileMenu = () => {
   useEffect(() => {
     if (typeof window !== "undefined") {
       // Prevents SSR issues
-      const user = localStorage.getItem("user");
+      const user = localStorage.getItem("kanchan-user");
       try {
         setRole(user ? JSON.parse(user)?.role : null);
       } catch (error) {

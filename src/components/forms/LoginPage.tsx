@@ -9,6 +9,7 @@ import Typed from "typed.js";
 import { useRouter } from "next/navigation";
 import { loginHandler } from "../server/auth/auth";
 import { toast } from "react-toastify";
+import Link from "next/link";
 
 const darkTheme = createTheme({
   palette: {
@@ -56,7 +57,7 @@ const LoginPage: React.FC = () => {
       .then((data) => {
         toast.success("Login Successfull...");
         localStorage.setItem("token", data.token);
-        localStorage.setItem("user", JSON.stringify(data.user));
+        localStorage.setItem("kanchan-user", JSON.stringify(data.user));
         router.push("/service");
       })
       .catch((err) => {
@@ -116,6 +117,19 @@ const LoginPage: React.FC = () => {
                 Login
               </Button>
             </form>
+            <div className="text-center">
+              <p>
+                Need help?{" "}
+                <Link
+                  style={{
+                    color: "#ffe000",
+                  }}
+                  href="/forget-password"
+                >
+                  forget password here
+                </Link>
+              </p>
+            </div>
             <p
               style={{
                 textAlign: "center",

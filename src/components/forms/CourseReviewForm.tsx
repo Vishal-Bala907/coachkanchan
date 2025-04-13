@@ -24,7 +24,7 @@ const CourseReviewForm = ({ id }: any) => {
     }
 
     const token = localStorage.getItem("token");
-    const user = localStorage.getItem("user");
+    const user = localStorage.getItem("kanchan-user");
     if (!token || !user) {
       toast.warning("Please Login First");
       return;

@@ -83,7 +83,7 @@ const ServiceDetailsArea = ({ id }: any) => {
         currency: "INR",
       });
 
-      const user = localStorage.getItem("user");
+      const user = localStorage.getItem("kanchan-user");
       const USER = user ? JSON.parse(user) : { name: "", email: "" };
 
       const options = {

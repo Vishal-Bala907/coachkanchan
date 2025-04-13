@@ -22,7 +22,7 @@ const UserQueryArea: React.FC<UserQueryAreaProps> = ({ id }) => {
   const scrollRef = React.useRef<HTMLUListElement>(null);
 
   const handleSubmitQuert = () => {
-    const USER = localStorage.getItem("user");
+    const USER = localStorage.getItem("kanchan-user");
     if (USER) {
       const U = JSON.parse(USER);
       const queryObj = {

@@ -26,7 +26,7 @@ const WorkshopArea = () => {
 
   function handleViewDetails(id: any) {
     const token = localStorage.getItem("token");
-    const user = localStorage.getItem("user");
+    const user = localStorage.getItem("kanchan-user");
     if (!token || !user) {
       toast.warning("Please Login First");
       return;
@@ -35,7 +35,7 @@ const WorkshopArea = () => {
   }
 
   useEffect(() => {
-    const user = localStorage.getItem("user");
+    const user = localStorage.getItem("kanchan-user");
     if (user) setUserRole(JSON.parse(user).role);
     setLoading(true);
     getAllWorkshops()
@@ -96,7 +96,7 @@ const WorkshopArea = () => {
     //                 </h6>
     //                 <p>{item.shortDec}</p>
     //               </div>
-              
+
     //             </section>
     //             <button
     //               onClick={() => handleViewDetails(item._id)}
@@ -111,8 +111,7 @@ const WorkshopArea = () => {
     //   </div>
     // </section>
 
-
-  <section className="service-section-2 fix section-padding">
+    <section className="service-section-2 fix section-padding">
       <div className="container">
         <div className="row">
           {workshops.map((item) => (
@@ -122,13 +121,13 @@ const WorkshopArea = () => {
               // data-wow-delay={item.data_wow_delay}
             >
               {userRole === "ADMIN" && (
-         <div
-         className="position-absolute"
-         style={{ right: "20px", top: "15px", cursor: "pointer" }}
-         onClick={() => router.push(`/update-workshop/${item._id}`)}
-       >
-         <Image src={update} alt="update icon" />
-       </div>
+                <div
+                  className="position-absolute"
+                  style={{ right: "20px", top: "15px", cursor: "pointer" }}
+                  onClick={() => router.push(`/update-workshop/${item._id}`)}
+                >
+                  <Image src={update} alt="update icon" />
+                </div>
               )}
 
               <div className="service-items-2">
